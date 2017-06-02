@@ -1,0 +1,58 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Payroll</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Employee </span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/users_admin/new">New Employee</a></li>
+            <li><a href="/users_admin">Employee</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Salary <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+             <li><a href="/salaries/new">salary</a></li>
+           <li><a href="/salaries">salary list</a></li>
+          </ul>
+        </li>
+      </ul>
+        <form class="navbar-form navbar-right">
+       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %><span class="glyphicon glyphicon-log-out"></span>
+      </form>
+  </div>
+</nav>
+
+<%# provide(:title, "Edit user") %>
+<h1>Update Details</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@salary) do |f| %>
+
+      <%= f.label :user_id %>
+      <%= f.text_field :user_id, class: 'form-control' %>
+
+      <%= f.label :start_date %>
+      <%= f.date_field :start_date, class: 'form-control' %>
+
+      <%= f.label :annual_amount %>
+      <%= f.text_field :annual_amount, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
+
+

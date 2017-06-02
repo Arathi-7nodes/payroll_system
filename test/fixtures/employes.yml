@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  name: MyString
+  start_date: 2017-05-26
+  end_date: 2017-05-26
+  billable: false
+  direct_experience: 1
+  indirect_experience: 1
+  starting_salary: 9.99
+  notes: MyText
+  planning_raise_date: 2017-05-26
+  planning_raise_salary: 9.99
+  planning_notes: MyText
+
+two:
+  user_id: 1
+  name: MyString
+  start_date: 2017-05-26
+  end_date: 2017-05-26
+  billable: false
+  direct_experience: 1
+  indirect_experience: 1
+  starting_salary: 9.99
+  notes: MyText
+  planning_raise_date: 2017-05-26
+  planning_raise_salary: 9.99
+  planning_notes: MyText

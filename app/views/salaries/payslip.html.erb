@@ -1,0 +1,64 @@
+<p align="center">
+<table border-collapse="collapse" border="1px solid black"  style="width:70%" align="center">
+<caption><b>Payslip </b></caption>
+
+<thead> <trcol bgcolor="gray"> <th><strong>User Name:</strong>
+<%= @salary.user.name %></th>
+<th><strong>User id:</strong>
+<%= @salary.user_id %>
+ </tr>
+
+
+<tr>
+<td>
+  <strong>start_date:</strong>
+  <%= @salary.start_date %>
+</td>
+</tr>
+<tr>
+<td>
+<strong>annual_amount:</strong>
+  <%= @salary.annual_amount %>
+  </td>
+  </tr>
+    <td>
+    <strong>Attendance:</strong>
+    <%= @salary.attendance %>
+  </td>
+  </tr>
+  <tr>
+   <td>
+   <strong>Basic:</strong>
+    <%= @salary.total_earnings %>
+  </td>
+   <td>
+   <strong>hra:</strong>
+    <%= @salary.hra %>
+  </td>
+  </tr>
+  <tr>
+   <td>
+   <strong>medical:</strong>
+    <%= @salary.medical %>
+  </td>
+   <td>
+   <strong>pf:</strong>
+    <%= @salary.pf %>
+  </td>
+  </tr>
+  <tr>
+   <td>
+   <strong>conveyance:</strong>
+    <%= @salary.conveyance %>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  <strong>Total earnings:₹ </strong>
+    <%= @salary.amount %>
+  </td>
+  </tr>
+  </table>
+  </p>
+
+

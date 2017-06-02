@@ -1,0 +1,99 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Payroll</a>
+    </div>
+     <% if current_user.has_role?(:admin) %>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Employee </span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/users_admin/new">New Employee</a></li>
+            <li><a href="/users_admin">Employee</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Salary <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+             <li><a href="/salaries/new">salary</a></li>
+           <li><a href="/salaries">salary list</a></li>
+          </ul>
+        </li>
+      </ul>
+        <form class="navbar-form navbar-right">
+       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %><span class="glyphicon glyphicon-log-out"></span>
+      </form>
+
+
+    </div>
+  </div>
+
+</nav>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>:Address</strong>
+  <%= @user.address %>
+</p>
+<p>
+  <strong>Designation:</strong>
+  <%= @user.designation %>
+</p>
+
+<p>
+  <strong>Phone no:</strong>
+  <%= @user.phone_no %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @user.start_date %>
+</p>
+<p>
+  <strong>End date:</strong>
+  <%= @user.end_date %>
+</p>
+
+<p>
+  <strong>user.direct_experience :</strong>
+  <%= @user.direct_experience %>
+</p>
+
+<p>
+  <strong>indirect experience:</strong>
+  <%= @user.indirect_experience %>
+</p>
+<p>
+  <strong>user.notes:</strong>
+  <%= @user.notes %>
+</p>
+
+<p>
+  <strong>billable:</strong>
+  <%= @user.billable %>
+</p>
+
+<button type="button" class="btn btn-success">
+<%= link_to 'Back', users_admin_index_path %>
+</button>
+<% end %>
+

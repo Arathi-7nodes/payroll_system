@@ -1,0 +1,87 @@
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Payroll</a>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="/salaries">Salary <span class="sr-only">(current)</span></a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+        <form class="navbar-form navbar-right">
+       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %><span class="glyphicon glyphicon-log-out"></span>
+      </form>
+
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+     <div class="form-group ">
+      <div class="alert alert-info">
+              Please Wait...
+      </div>
+        <div class="alert alert-success" style="display:none;">
+          <span class="glyphicon glyphicon-ok"></span> <b>Employee list</b>
+        </div>
+          <table class="table">
+            <thead>
+              <tbody>
+                <tr>
+                  <th>
+                     Name
+                  </th>
+                  <th>
+                      Email
+                  </th>
+                  <th>
+                      Designation
+                  </th>
+
+                  <th>
+                     Address
+                  </th>
+                  <th>
+                      Phone no
+                  </th>
+                </tr>
+                <% @users.each do |user| %>
+                <tr class="warning">
+                  <td>
+                    <%= user.name %><a href="pd">
+                  </td>
+                  <td>
+                    <%= user.email %>
+                  </td>
+                  <td>
+                    <%= user.designation %>
+                  </td>
+                  <td>
+                    <%= user.address %>
+                  </td>
+                  <td>
+                    <%= user.phone_no %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+        </thead>
+      </table>
+      <%#= paginate @user %>
+      <%#= page_entries_info @user %>
+    </div>
+</div>
+  </div>
+</div>
+
+
+
+

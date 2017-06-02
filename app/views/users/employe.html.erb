@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="">Payroll</a>
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/salaries">Salary <span class="sr-only">(current)</span></a></li>
+      <li><a href="/empl">employees</a></li>
+    </ul>
+    </div>
+    </div>
+  </div>
+  <form class="navbar-form navbar-right">
+       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %><span class="glyphicon glyphicon-log-out"></span>
+  </form>
+
+</nav>
+<p align="center">
+<h1><b>Payroll</b></h1></p>
+
+
+

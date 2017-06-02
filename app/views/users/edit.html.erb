@@ -1,0 +1,81 @@
+<nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Payroll</a>
+    </div>
+    <% if current_user.has_role?(:admin) %>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Employee </span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/users_admin/new">New Employee</a></li>
+            <li><a href="/users_admin">Employee</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Salary <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+             <li><a href="/salaries/new">salary</a></li>
+           <li><a href="/salaries">salary list</a></li>
+          </ul>
+        </li>
+      </ul>
+        <form class="navbar-form navbar-right">
+       <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %><span class="glyphicon glyphicon-log-out"></span>
+      </form>
+    </div>
+  </div>
+</nav>
+<%# provide(:title, "Edit user") %>
+<h1>Update Details</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: users_admin_path) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+       <%= f.label :start_date %>
+      <%= f.date_field :start_date, class: 'form-control' %>
+
+      <%= f.label :end_date %>
+      <%= f.date_field :end_date, class: 'form-control' %>
+
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.label :phone_no %>
+      <%= f.text_field :phone_no, class: 'form-control' %>
+
+       <%= f.label :designation %>
+      <%= f.text_field :designation, class: 'form-control' %>
+
+      <%= f.label :starting_salary %>
+      <%= f.number_field :starting_salary, class: 'form-control' %>
+      <%= f.label :notes %>
+      <%= f.text_area :notes, class: 'form-control' %>
+
+      <%= f.label :billable %>
+      <%= f.check_box :billable, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+
+
+

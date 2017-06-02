@@ -1,0 +1,42 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="wel">PAYROLL</a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav"> -->
+      <ul>
+         <form class="navbar-form navbar-right">
+      <% if user_signed_in? %>
+      <li><b><i>
+        <%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %>
+      </i></b></li>
+      <% else %>
+       <li><b><i>
+        <%= link_to('LOGIN', new_user_session_path)  %>
+       </i></b></li>
+      <% end %>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<p align="center">
+  <%= image_tag("pa", height: '290', width: '900', align: 'middle' ) %>
+</p>
+
+
+<b><h3><p align="center">Payroll software</p></h3></b>
+<div id="maia-signature"></div>
+<i><h1><p align="center">Find the best solution</p></h1></i>
+
